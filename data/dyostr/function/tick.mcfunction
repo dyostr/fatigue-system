@@ -5,7 +5,7 @@ execute as @a \
         run scoreboard players add @s sprint_timer 1
 
 
-# if not sprinting, decrement the timer
+# if not sprinting and lacks the tag, decrement the timer
 execute as @a \
         unless entity @s[tag=sprint_disabled] \
         unless predicate dyostr:sprinting \
