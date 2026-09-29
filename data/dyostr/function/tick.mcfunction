@@ -41,12 +41,3 @@ execute as @a[tag=sprint_disabled] \
 # === actionbar ===
 execute as @a unless entity @s[tag=sprint_disabled] run function dyostr:actionbar
 execute as @a if entity @s[tag=sprint_disabled] run function dyostr:actionbar_sprint_disabled
-
-
-# === debug ===
-execute store result score movement_speed debug_info \
-        run attribute @a[limit=1] movement_speed get 10000000000
-execute store result score air_drag_modifier debug_info \
-        run attribute @a[limit=1] air_drag_modifier get
-execute store result score sprint_timer debug_info \
-        run scoreboard players get @a[limit=1] sprint_timer
