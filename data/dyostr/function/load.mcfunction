@@ -1,8 +1,19 @@
 # reset
-scoreboard objectives remove hunger_level
-scoreboard objectives remove sprinting_time
-tag @a remove sprint_disabled
+scoreboard objectives remove sprint_timer
 
 # load
-scoreboard objectives add hunger_level dummy
-scoreboard objectives add sprinting_time dummy
+scoreboard objectives add sprint_timer dummy
+
+# const values
+scoreboard objectives add CONST_VALUES dummy
+scoreboard players set MAX_TIMER CONST_VALUES 60
+scoreboard players set 5 CONST_VALUES 5
+scoreboard players operation STEP_TIMER CONST_VALUES = MAX_TIMER CONST_VALUES
+scoreboard players operation STEP_TIMER CONST_VALUES /= 5 CONST_VALUES
+scoreboard players operation ONE CONST_VALUES = STEP_TIMER CONST_VALUES
+scoreboard players operation TWO CONST_VALUES = STEP_TIMER CONST_VALUES
+scoreboard players operation TWO CONST_VALUES += STEP_TIMER CONST_VALUES
+scoreboard players operation THREE CONST_VALUES = TWO CONST_VALUES
+scoreboard players operation THREE CONST_VALUES += STEP_TIMER CONST_VALUES
+scoreboard players operation FOUR CONST_VALUES = THREE CONST_VALUES
+scoreboard players operation FOUR CONST_VALUES += STEP_TIMER CONST_VALUES
